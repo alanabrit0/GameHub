@@ -1,0 +1,35 @@
+@if (jogo) {
+  <section class="detalhes">
+    <a routerLink="/jogos" class="voltar">← Voltar ao catálogo</a>
+    <div class="detalhes-conteudo">
+      <img [src]="jogo.imagem" [alt]="jogo.nome" class="imagem">
+      <div class="info">
+        <h2>{{ jogo.nome }}</h2>
+        <p class="categoria"><strong>Categoria:</strong> {{ jogo.categoria }}</p>
+        <p class="descricao">{{ jogo.descricao }}</p>
+        <p class="preco"><strong>Preço:</strong>
+          {{ jogo.preco === 0 ? 'Gratuito' : ('R$ ' + jogo.preco.toFixed(2)) }}
+        </p>
+        <p class="avaliacao"><strong>Avaliação:</strong> {{ jogo.avaliacao }} / 5</p>
+
+        @switch (jogo.categoria) {
+          @case ('FPS') { <p class="tag"> Categoria: FPS</p> }
+          @case ('Battle Royale') { <p class="tag"> Categoria: Battle Royale</p> }
+          @case ('Estratégia') { <p class="tag"> Categoria: Estratégia</p> }
+          @case ('Aventura') { <p class="tag"> Categoria: Aventura</p> }
+          @default { <p class="tag"> Categoria: {{ jogo.categoria }}</p> }
+        }
+
+        <p class="status" [class.disponivel]="jogo.disponivel" [class.indisponivel]="!jogo.disponivel">
+          {{ jogo.disponivel ? ' Disponível' : ' Indisponível' }}
+        </p>
+      </div>
+    </div>
+  </section>
+} @else {
+  <section class="nao-encontrado">
+    <h2>Jogo não encontrado</h2>
+    <p>O jogo que você procura não existe no catálogo.</p>
+    <a routerLink="/jogos" class="voltar">Voltar ao catálogo</a>
+  </section>
+}

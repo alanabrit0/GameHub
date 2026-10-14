@@ -1,0 +1,26 @@
+.sobre {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.sobre h2 {
+  color: #1a1a2e;
+  border-bottom: 3px solid #f39c12;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+.sobre h3 {
+  color: #1a1a2e;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.sobre p, .sobre li {
+  color: #555;
+  line-height: 1.6;
+}
+.sobre ul { padding-left: 1.5rem; }
+.sobre li { margin-bottom: 0.3rem; }

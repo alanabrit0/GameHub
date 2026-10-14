@@ -1,0 +1,56 @@
+<section class="cadastro">
+  <h2>Cadastrar Novo Jogo</h2>
+
+  @if (mensagem) {
+    <p class="success">{{ mensagem }}</p>
+  }
+  @if (erro) {
+    <p class="erro">{{ erro }}</p>
+  }
+
+  <form (ngSubmit)="salvar()" #formCadastro="ngForm">
+    <div class="campo">
+      <label for="nome">Nome *</label>
+      <input id="nome" type="text" [(ngModel)]="jogo.nome" name="nome" required>
+    </div>
+
+    <div class="campo">
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" [(ngModel)]="jogo.descricao" name="descricao" rows="3"></textarea>
+    </div>
+
+    <div class="campo">
+      <label for="categoria">Categoria</label>
+      <input id="categoria" type="text" [(ngModel)]="jogo.categoria" name="categoria">
+    </div>
+
+    <div class="linha">
+      <div class="campo">
+        <label for="preco">Preço (R$)</label>
+        <input id="preco" type="number" [(ngModel)]="jogo.preco" name="preco" min="0" step="0.01">
+      </div>
+
+      <div class="campo">
+        <label for="avaliacao">Avaliação (0 a 5)</label>
+        <input id="avaliacao" type="number" [(ngModel)]="jogo.avaliacao" name="avaliacao" min="0" max="5" step="0.1">
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="imagem">URL da Imagem</label>
+      <input id="imagem" type="text" [(ngModel)]="jogo.imagem" name="imagem">
+    </div>
+
+    <div class="campo checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="jogo.disponivel" name="disponivel">
+        Disponível
+      </label>
+    </div>
+
+    <div class="acoes">
+      <button type="submit" class="btn-salvar">Cadastrar</button>
+      <button type="button" (click)="irParaCatalogo()" class="btn-cancelar">Ver Catálogo</button>
+    </div>
+  </form>
+</section>

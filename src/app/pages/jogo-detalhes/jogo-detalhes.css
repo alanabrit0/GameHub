@@ -1,0 +1,44 @@
+.detalhes, .nao-encontrado {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.voltar {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+}
+.voltar:hover { color: #2980b9; }
+.detalhes-conteudo {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.imagem {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.info { flex: 1; min-width: 250px; }
+.info h2 { color: #1a1a2e; margin-bottom: 1rem; font-size: 1.8rem; }
+.info p { margin: 0.5rem 0; color: #555; line-height: 1.6; }
+.descricao { margin: 1rem 0; }
+.tag {
+  background: #f39c12;
+  color: #1a1a2e;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.disponivel { color: #28a745; font-weight: bold; }
+.indisponivel { color: #dc3545; font-weight: bold; }
+.nao-encontrado { text-align: center; }
+.nao-encontrado h2 { color: #dc3545; margin-bottom: 1rem; }

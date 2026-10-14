@@ -1,0 +1,11 @@
+<article class="card">
+  <img [src]="jogo.imagem" [alt]="jogo.nome" class="item-image">
+  <h3>{{ jogo.nome }}</h3>
+  <p class="categoria">{{ jogo.categoria }}</p>
+  <p class="preco">{{ jogo.preco === 0 ? 'Gratuito' : ('R$ ' + jogo.preco.toFixed(2)) }}</p>
+  <p class="avaliacao"> {{ jogo.avaliacao }}</p>
+  <p class="status" [class.disponivel]="jogo.disponivel" [class.indisponivel]="!jogo.disponivel">
+    {{ jogo.disponivel ? 'Disponível' : 'Indisponível' }}
+  </p>
+  <a [routerLink]="['/jogos', jogo.id]" class="btn-detalhes">Ver detalhes</a>
+</article>

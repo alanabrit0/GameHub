@@ -1,0 +1,52 @@
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
+}
+.hero h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #f39c12; }
+.hero p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+.btn-cta {
+  display: inline-block;
+  background: #f39c12;
+  color: #1a1a2e;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.btn-cta:hover { background: #e67e22; }
+
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  flex-wrap: wrap;
+}
+.card-indicador {
+  background: #fff;
+  padding: 1.5rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.card-indicador h3 { font-size: 2.5rem; color: #f39c12; }
+.card-indicador p { color: #555; }
+
+.destaques { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+.destaques h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a2e;
+  border-bottom: 3px solid #f39c12;
+  display: inline-block;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }

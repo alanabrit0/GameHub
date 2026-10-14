@@ -1,0 +1,28 @@
+<section class="catalogo">
+  <h2>Catálogo de Jogos</h2>
+
+  <div class="filtros">
+    <input
+      type="text"
+      placeholder="Buscar por nome..."
+      [(ngModel)]="busca"
+      class="input-busca"
+    >
+    <select [(ngModel)]="categoriaSelecionada" class="select-categoria">
+      <option value="">Todas as categorias</option>
+      @for (cat of categorias; track cat) {
+        <option [value]="cat">{{ cat }}</option>
+      }
+    </select>
+  </div>
+
+  @if (jogosFiltrados.length > 0) {
+    <div class="grid">
+      @for (jogo of jogosFiltrados; track jogo.id) {
+        <app-jogo-card [jogo]="jogo"></app-jogo-card>
+      }
+    </div>
+  } @else {
+    <p class="sem-resultados">Nenhum jogo encontrado com os filtros aplicados.</p>
+  }
+</section>
